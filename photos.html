@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>/photos/ — Pain Heals</title>
+  <meta name="description" content="Photos and media from Pain Heals — press, live, and BTS." />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/mobile.css" />
+  <link rel="icon" type="image/png" href="assets/Logo_main.png" />
+</head>
+<body class="board-page">
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">
+        <img src="assets/Logo_main.png" alt="Home" style="height:32px; display:block;" />
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="releases.html">Updates</a>
+        <a href="merch.html">Faculty</a>
+        <a href="mission.html">踢הخŦ</a>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-drawer" id="navDrawer">
+      <a href="index.html">Home</a>
+      <a href="releases.html">Updates</a>
+      <a href="merch.html">Faculty</a>
+      <a href="mission.html">踢הخŦ</a>
+    </div>
+  </nav>
+
+  <div class="board-header-wrap">
+    <div class="board-logo-block">
+      <img src="assets/Logo_main.png" alt="Pain Heals" class="board-logo-img" />
+    </div>
+
+    <div class="board-util-links">
+      <a href="index.html">[ Home ]</a>
+      <a href="singles.html">[ Before Pain Heals [vault] ]</a>
+      <a href="albums.html">[ Albums ]</a>
+      <a href="music-videos.html">[ Music Videos ]</a>
+      <a href="visualizers.html">[ Visualizers ]</a>
+      <a href="advertisements.html">[ Advertisements ]</a>
+      <a href="photos.html" class="active">[ Photos ]</a>
+      <a href="book.html">[ Book ]</a>
+    </div>
+
+    <h1 class="board-title">
+      <span class="board-slug">/photos/</span> - Photos
+    </h1>
+
+    <hr class="board-divider" />
+
+    <div class="board-action-row">
+      <a class="board-action-link" href="mailto:press@33murderme.com">[ Request Hi-Res ]</a>
+    </div>
+
+    <div class="board-info-block">
+      <div class="board-info-item">
+        <span class="board-info-date">2026</span>
+        Press photos, live shots, and media from Pain Heals. Hi-res available on request for press and media.
+      </div>
+    </div>
+
+    <hr class="board-divider" />
+  </div>
+
+  <main>
+    <div class="page-wrap photo-page-wrap">
+
+      <div class="board-controls">
+        <input class="board-search" type="text" id="boardSearch" placeholder="Search photos..." />
+      </div>
+
+      <div class="photo-grid" id="photoGrid"></div>
+
+      <p class="photo-empty hidden" id="photoEmpty">[ No photos match this search. ]</p>
+    </div>
+  </main>
+
+  <div class="photo-lightbox" id="photoLightbox" role="dialog" aria-modal="true" aria-labelledby="photoLightboxTitle" hidden>
+    <button class="photo-lightbox-close" type="button" aria-label="Close image">[ Close ]</button>
+    <button class="photo-lightbox-nav photo-lightbox-prev" type="button" aria-label="Previous image">‹</button>
+    <figure>
+      <img id="photoLightboxImage" src="" alt="" />
+      <figcaption id="photoLightboxTitle"></figcaption>
+    </figure>
+    <button class="photo-lightbox-nav photo-lightbox-next" type="button" aria-label="Next image">›</button>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="releases.html">Updates</a>
+      <a href="merch.html">Faculty</a>
+      <a href="mission.html">踢הخŦ</a>
+    </div>
+    <div class="footer-copy">
+      &copy; 2026 Pain Heals. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/photos.js"></script>
+</body>
+</html>
+

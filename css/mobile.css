@@ -1,0 +1,232 @@
+/* mobile.css — responsive breakpoints for 33murderme */
+
+/* ─── Tablet (≤768px) ─────────────────────────────────────── */
+@media (max-width: 768px) {
+  /* Nav */
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+
+  /* Hero */
+  .site-header { padding: 28px 16px 20px; }
+  .hero-lockup { max-width: 100%; gap: 12px; }
+
+  .home-page {
+    background-image: linear-gradient(to bottom, #3f78c4 0, #ffffee 240px);
+    background-size: 100% 240px;
+  }
+  .home-page .releases-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .newsletter-btn,
+  .subscribe-submit { min-height: 44px; }
+  .subscribe-input { font-size: 16px; }
+
+  /* Spotlight */
+  .spotlight { flex-direction: column; }
+  .spotlight-art { width: 100%; height: 200px; }
+
+  /* Releases grid: 5-col → 2-col */
+  .releases-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .release-category {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .release-category:nth-child(odd) {
+    border-right: 1px solid var(--border);
+  }
+  .release-category:last-child { border-bottom: none; }
+
+  /* Popular threads: 4-col → 2-col */
+  .threads-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Release cards list: 4-col → 2-col */
+  .releases-list { grid-template-columns: repeat(2, 1fr); }
+
+  /* Merch grid: 3-col → 2-col */
+  .merch-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* About */
+  .about-hero { flex-direction: column; }
+  .about-photo { width: 100%; height: 240px; }
+  .press-grid { grid-template-columns: repeat(2, 1fr); }
+  .contact-grid { grid-template-columns: 1fr; }
+
+  /* Cart drawer */
+  .cart-drawer { width: 100%; right: -100%; }
+
+  /* Stats bar */
+  .stats-bar { gap: 16px; }
+  .stat-item { min-width: 100px; }
+
+  /* Photos grid */
+  .photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .photo-card-open img { height: 180px; }
+  .photo-filters { margin-left: 0; }
+
+  .faculty-org-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .faculty-org-lane-managers,
+  .faculty-org-lane-curators {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── Mobile (≤480px) ─────────────────────────────────────── */
+@media (max-width: 480px) {
+  :root { --nav-h: 52px; }
+
+  .page-wrap { padding: 0 12px 8px; }
+  body { padding-bottom: 128px; }
+
+  .home-page .releases-grid { grid-template-columns: 1fr; }
+  .site-header .artist-name { font-size: clamp(30px, 9vw, 40px); }
+  .release-category ul li a { padding: 8px 0; font-size: 15px; }
+
+  /* Nav logo size */
+  .nav-logo { font-size: 15px; }
+
+  /* Releases grid: 2-col → 1-col */
+  .releases-grid { grid-template-columns: 1fr; }
+  .release-category { border-right: none !important; }
+
+  /* Popular threads: 2-col → 1-col */
+  .threads-grid { grid-template-columns: 1fr; }
+
+  /* Release cards: 2-col → 1-col */
+  .releases-list { grid-template-columns: 1fr; }
+
+  /* Merch grid: 2-col → 1-col */
+  .merch-grid { grid-template-columns: 1fr; }
+
+  /* Press photos: 2-col → 1-col */
+  .press-grid { grid-template-columns: 1fr; }
+
+  /* Stream links wrap nicely */
+  .stream-links { gap: 6px; }
+  .stream-btn { font-size: 11px; padding: 5px 10px; }
+
+  /* Filter tabs scroll horizontally */
+  .filter-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 10px;
+  }
+  .filter-tab { flex-shrink: 0; }
+
+  /* Footer links wrap */
+  .footer-links { gap: 6px; }
+
+  /* Stats single row wrap */
+  .stats-bar { flex-direction: column; gap: 12px; }
+  .stat-item { min-width: unset; width: 100%; }
+
+  /* Bigger touch targets */
+  .nav-links a,
+  .nav-drawer a,
+  .filter-tab,
+  .btn-add-cart,
+  .btn-checkout,
+  .stream-btn { min-height: 44px; }
+}
+
+/* ─── Release page mobile ─────────────────────────────────── */
+@media (max-width: 768px) {
+  .release-hero-img { width: 200px; height: 200px; }
+  .release-meta-block { min-width: unset; width: 100%; }
+  .release-meta-item { flex-direction: column; gap: 2px; }
+  .release-meta-label { min-width: unset; }
+  .custom-player { flex-direction: column; }
+  .player-artwork { width: 60px; height: 60px; }
+  .comment-img { max-width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .release-utility-links a { font-size: 12px; padding: 4px 8px; }
+  .release-board-title { font-size: 20px; }
+  .release-hero-img { width: 160px; height: 160px; }
+  .release-stream-row { gap: 6px; }
+  .post-form-footer { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .post-submit { width: 100%; }
+
+  /* Board pages */
+  .thread-op { flex-direction: column; }
+  .thread-op-video { flex-direction: column; }
+  .thread-thumb { width: 200px; max-width: 100%; height: 160px; }
+  .thread-video { width: 100%; }
+  .thread-video iframe { width: 100%; height: auto; aspect-ratio: 16 / 9; }
+  .board-search { width: 120px; }
+  .board-title { font-size: 22px; }
+  .board-logo-img { height: 70px; }
+
+  .board-controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .board-search { width: 100%; }
+  .photo-grid { grid-template-columns: 1fr; }
+  .photo-card-open img { height: 220px; }
+  .photo-card-actions a,
+  .photo-filter {
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .photo-lightbox-nav {
+    top: auto;
+    bottom: 14px;
+    transform: none;
+  }
+  .photo-lightbox-prev { left: 14px; }
+  .photo-lightbox-next { right: 14px; }
+
+  .faculty-node {
+    padding: 9px;
+  }
+  .faculty-name {
+    font-size: 13px;
+  }
+}
+
+/* ─── Music player mobile ──────────────────────────────────── */
+@media (max-width: 768px) {
+  .player-inner { gap: 8px; padding: 6px 12px; flex-wrap: wrap; }
+  .player-volume-wrap { display: none; }
+  .player-cover { order: 0; }
+  .player-info {
+    order: 1;
+    flex: 1 1 calc(100% - 64px);
+    min-width: 0;
+    max-width: none;
+    overflow: hidden;
+  }
+  .player-now-title { width: 100%; max-width: 100%; }
+  .player-controls-bar { order: 2; }
+  .player-dl-btn { order: 2; }
+  .player-progress-wrap { order: 3; flex: 1 0 100%; width: 100%; min-width: 0; }
+}
+
+@media (max-width: 480px) {
+  .player-inner { flex-wrap: wrap; }
+  .player-cover { order: 0; width: 40px; height: 40px; }
+  .player-info {
+    order: 1;
+    flex: 1 1 calc(100% - 56px);
+    min-width: 0;
+    max-width: none;
+    overflow: hidden;
+  }
+  .player-controls-bar { order: 2; }
+  .player-progress-wrap { order: 3; width: 100%; min-width: 0; }
+  .player-btn { width: 36px; height: 36px; min-height: 44px; }
+  .player-btn-play { width: 44px; height: 44px; }
+
+  /* Inline replies */
+  .reply-form-actions { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .reply-chars { margin-left: 0; }
+  .reply-submit { width: 100%; min-height: 44px; }
+  .reply-img { max-width: 100%; }
+}

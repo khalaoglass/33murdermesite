@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>/games/ - T-Rex Jump — Pain Heals</title>
+  <meta name="description" content="T-Rex Jump — endless runner. Jump the cactus, duck the pterodactyl." />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/mobile.css" />
+  <link rel="icon" type="image/png" href="assets/Logo_main.png" />
+</head>
+<body class="board-page">
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">
+        <img src="assets/Logo_main.png" alt="Home" style="height:32px; display:block;" />
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="releases.html">Updates</a>
+        <a href="merch.html">Faculty</a>
+        <a href="mission.html">踢הخŦ</a>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-drawer" id="navDrawer">
+      <a href="index.html">Home</a>
+      <a href="releases.html">Updates</a>
+      <a href="merch.html">Faculty</a>
+      <a href="mission.html">踢הخŦ</a>
+    </div>
+  </nav>
+
+  <div class="board-header-wrap">
+    <div class="board-logo-block">
+      <img src="assets/Logo_main.png" alt="Pain Heals" class="board-logo-img" />
+    </div>
+
+    <div class="board-util-links">
+      <a href="index.html">[ Home ]</a>
+      <a href="singles.html">[ Before Pain Heals [vault] ]</a>
+      <a href="albums.html">[ Albums ]</a>
+      <a href="music-videos.html">[ Music Videos ]</a>
+      <a href="visualizers.html">[ Visualizers ]</a>
+      <a href="advertisements.html">[ Advertisements ]</a>
+      <a href="photos.html">[ Photos ]</a>
+      <a href="book.html">[ Book ]</a>
+    </div>
+
+    <h1 class="board-title">
+      <span class="board-slug">/games/</span> - T-Rex Jump
+    </h1>
+
+    <hr class="board-divider" />
+
+    <div class="board-action-row">
+      <a class="board-action-link" href="games.html">[ Back to Games ]</a>
+    </div>
+
+    <div class="board-info-block">
+      <div class="board-info-item">
+        <span class="board-info-date">2026</span>
+        Jump the cactus. Duck the pterodactyl. Beat your high score.
+      </div>
+    </div>
+
+    <hr class="board-divider" />
+  </div>
+
+  <main>
+    <div class="page-wrap">
+      <div class="trex-stage">
+        <div class="trex-hud">
+          <span>SCORE <span id="trexScore">00000</span></span>
+          <span>HI <span id="trexBest">00000</span></span>
+        </div>
+        <canvas class="trex-canvas" id="trexCanvas" width="800" height="240" aria-label="T-Rex Jump game"></canvas>
+        <p class="trex-help">Space or tap to jump. Down arrow, or hold Duck, to slide under a pterodactyl.</p>
+        <div class="trex-actions">
+          <button class="trex-btn" id="trexJump" type="button">Jump</button>
+          <button class="trex-btn" id="trexDuck" type="button">Duck</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="releases.html">Updates</a>
+      <a href="merch.html">Faculty</a>
+      <a href="mission.html">踢הخŦ</a>
+    </div>
+    <div class="footer-copy">
+      &copy; 2026 Pain Heals. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/trex.js"></script>
+</body>
+</html>

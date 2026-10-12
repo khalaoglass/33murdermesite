@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Release — 33murderme</title>
+  <meta name="description" content="Release detail page for 33murderme." />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/mobile.css" />
+  <link rel="icon" type="image/png" href="assets/Logo_main.png" />
+</head>
+<body class="release-page">
+
+  <!-- ─── TOP NAV (no breadcrumb bar — per design notes) ──── -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">
+        <img src="assets/Logo_main.png" alt="Home" style="height:32px; display:block;" />
+        
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="releases.html">Updates</a>
+        <a href="merch.html">Faculty</a>
+        <a href="mission.html">踢הخŦ</a>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-drawer" id="navDrawer">
+      <a href="index.html">Home</a>
+      <a href="releases.html">Updates</a>
+      <a href="merch.html">Faculty</a>
+      <a href="mission.html">踢הخŦ</a>
+    </div>
+  </nav>
+
+  <!-- ─── RELEASE HEADER ────────────────────────────────────── -->
+  <div class="release-header-wrap">
+
+    <!-- Board-style utility links — bigger + centered per design notes -->
+    <div class="release-utility-links">
+      <a href="releases.html">[ All Releases ]</a>
+      <a href="releases.html?filter=singles">[ Before Pain Heals [vault] ]</a>
+      <a href="releases.html?filter=albums">[ Albums ]</a>
+      <a href="releases.html?filter=eps">[ EPs ]</a>
+      <a href="releases.html?filter=features">[ Features ]</a>
+      <a href="releases.html?filter=collabs">[ Collabs ]</a>
+    </div>
+
+    <!-- Hero image + title block -->
+    <div class="release-hero">
+      <img
+        class="release-hero-img"
+        id="releaseHeroImg"
+        src="assets/img/latest-cover.jpg"
+        alt="Release cover art"
+        onerror="this.style.background='#1e1e1e';this.removeAttribute('src')"
+      />
+    </div>
+
+    <!-- Section title — styled like /a/ - Anime & Manga -->
+    <div class="release-board-title">
+      <span class="release-board-slug" id="releaseSlug">/before-pain-heals-vault/</span>
+      <span class="release-board-name" id="releaseTitle"> — [ Track / Album Title ]</span>
+    </div>
+
+    <hr class="release-divider" />
+
+    <!-- Stream / listen button — replaces "[Start a New Thread]" -->
+    <div class="release-listen-row">
+      <a class="release-listen-btn" href="#player">▶ Listen Now</a>
+    </div>
+
+    <!-- Metadata sidebar -->
+    <div class="release-meta-block">
+      <div class="release-meta-item">
+        <span class="release-meta-label">Date Created:</span>
+        <span class="release-meta-value" id="releaseDateEl">[ Release Date ]</span>
+      </div>
+      <div class="release-meta-item">
+        <span class="release-meta-label">SoundCloud:</span>
+        <a class="release-meta-link" id="releaseSCLink" href="#" target="_blank" rel="noopener">[ SoundCloud Link ]</a>
+      </div>
+      <div class="release-meta-item">
+        <span class="release-meta-label">Instagram:</span>
+        <a class="release-meta-link" id="releaseIGLink" href="#" target="_blank" rel="noopener">@33murderme</a>
+      </div>
+    </div>
+
+    <!-- All streaming links -->
+    <div class="release-stream-row">
+      <a class="stream-btn" id="spotifyLink" href="#" target="_blank" rel="noopener">♫ Spotify</a>
+      <a class="stream-btn" id="appleLink"   href="#" target="_blank" rel="noopener">♫ Apple Music</a>
+      <a class="stream-btn" id="scLink"      href="#" target="_blank" rel="noopener">♫ SoundCloud</a>
+      <a class="stream-btn" id="ytLink"      href="#" target="_blank" rel="noopener">♫ YouTube</a>
+    </div>
+
+  </div><!-- /release-header-wrap -->
+
+  <main>
+    <div class="page-wrap">
+
+      <!-- ─── AUDIO PLAYER ────────────────────────────────────── -->
+      <!-- SoundCloud embed (primary) — swap src to the real track URL -->
+      <div class="panel" id="player">
+        <div class="panel-header">
+          <h2>Player</h2>
+          <button class="panel-action" id="togglePlayerMode">Switch to HTML5 Player</button>
+        </div>
+        <div class="panel-body" style="padding:0;">
+
+          <!-- SoundCloud embed -->
+          <div id="scPlayer">
+            <iframe
+              id="scEmbed"
+              width="100%"
+              height="166"
+              scrolling="no"
+              frameborder="no"
+              allow="autoplay"
+              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/33murderme&color=%23cc0000&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false">
+            </iframe>
+          </div>
+
+          <!-- HTML5 fallback player (hidden by default) -->
+          <div id="html5Player" class="hidden">
+            <div class="custom-player">
+              <div class="player-artwork">
+                <img id="playerArt" src="assets/img/latest-cover.jpg" alt="Cover art" onerror="this.style.background='#1e1e1e';this.removeAttribute('src')" />
+              </div>
+              <div class="player-controls">
+                <div class="player-track-name" id="playerTrackName">[ Track Title ]</div>
+                <audio id="audioEl" controls style="width:100%; margin:12px 0;">
+                  <!-- <source src="assets/audio/track.mp3" type="audio/mpeg"> -->
+                  Your browser does not support the audio element.
+                </audio>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ─── THREAD / COMMENTS ────────────────────────────────── -->
+      <!-- Anonymous, no accounts — like 4chan threads. -->
+      <!-- Comments are stored in localStorage for demo.           -->
+      <!-- For real persistence: plug in Firebase/Supabase (see    -->
+      <!-- js/comments.js for the swap-in instructions).           -->
+      <div class="panel">
+        <div class="panel-header">
+          <h2>Thread</h2>
+          <span class="panel-action text-muted" id="commentCount">0 replies</span>
+        </div>
+        <div class="panel-body" style="padding:0;">
+
+          <!-- Search + controls row -->
+          <div class="thread-controls">
+            <input class="thread-search" type="text" id="threadSearch" placeholder="Search thread..." />
+            <button class="panel-action" id="catalogBtn" style="padding:6px 10px;">[Catalog]</button>
+          </div>
+
+          <!-- Comment list -->
+          <div class="comment-list" id="commentList">
+            <!-- Comments rendered by comments.js -->
+          </div>
+
+          <!-- Post form -->
+          <div class="post-form" id="postForm">
+            <div class="post-form-header">Post a Reply — Anonymous</div>
+            <div class="post-form-body">
+              <textarea
+                class="post-textarea"
+                id="postText"
+                placeholder="Say something..."
+                maxlength="2000"
+                rows="4"
+              ></textarea>
+
+              <!-- Optional image attach -->
+              <label class="post-file-label">
+                <input type="file" id="postImage" accept="image/*" style="display:none;" />
+                📎 Attach image (optional)
+              </label>
+              <div id="postImagePreview" class="post-image-preview hidden"></div>
+
+              <div class="post-form-footer">
+                <span class="post-chars" id="postChars">0 / 2000</span>
+                <button class="post-submit" id="postSubmit">Post Reply</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div><!-- /page-wrap -->
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="releases.html">Updates</a>
+      <a href="merch.html">Faculty</a>
+      <a href="mission.html">踢הخŦ</a>
+    </div>
+    <div class="footer-copy">
+      &copy; 2026 Pain Heals. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/comments.js"></script>
+  <script src="js/release-page.js"></script>
+</body>
+</html>
+
